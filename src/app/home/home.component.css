@@ -373,6 +373,7 @@ body.loaded #preloader{
   font-size: 50px;
   letter-spacing: 5px;
   margin: 0;
+  text-align: center;
 }
 .home-section-background h2 input {
   color: #000000;
@@ -389,6 +390,7 @@ body.loaded #preloader{
   font-size: 30px;
   letter-spacing: 5px;
   margin: 0;
+  text-align: center;
 }
 .home-section-background h3 input {
   color: #000000;
@@ -407,6 +409,7 @@ body.loaded #preloader{
   font-size: 15px;
   margin-top: 40px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .typed-cursor{

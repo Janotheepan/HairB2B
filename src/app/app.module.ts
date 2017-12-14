@@ -1,20 +1,39 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { StylistComponent } from './stylist/stylist.component';
+import { ComplaintsComponent } from './complaints/complaints.component';
 
+import {RouterModule , Routes} from '@angular/router';
+
+const routes: Routes = [
+  {
+    path : '', component : HomeComponent
+  },
+  {
+    path : 'stylist' , component : StylistComponent
+  },
+  {
+    path : 'complaints' , component : ComplaintsComponent
+  }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    StylistComponent,
+    ComplaintsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    RouterModule.forRoot(routes)
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
+
+
 export class AppModule { }
