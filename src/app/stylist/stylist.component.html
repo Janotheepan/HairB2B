@@ -1,3 +1,90 @@
-<p>
-  stylist works!
-</p>
+<br>
+
+
+<div class="stylist">
+
+  <!-- stylist section start -->
+
+  <div class="container">
+    <div class="row">
+
+
+      <div id="advance-serch" class="col-sm-3">
+        <form class="a-search">
+          <h4>Search By,</h4>
+          <p>Name</p>
+          <input type="text" name="name" placeholder="Name">
+          <p>Skill</p>
+          <input type="text" name="skill" placeholder="Preferred Skill">
+          <p>Start Date</p>
+          <input type="date" name="date">
+          <p>price</p>
+          <input type="text" name="price" placeholder="Accepted Price">
+          <p>Location</p>
+          <input type="text" name="location" placeholder="Preferred Location">
+          <p>Job Type</p>
+          <select name="job_type">
+            <option name="educator">Educator</option>
+            <option name="hair_stylist">Hair Stylist</option>
+            <option name="assistant">Assistant</option>
+          </select>
+        </form>
+      </div>
+
+
+      <div class="col-sm-9">
+        <div class="row">
+
+          <div class="col-sm-6">
+            <div class="row">
+              <a>Calendar</a>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="row">
+              <a>{{stylist.name}}<br>
+              {{stylist.profile_pic}}<br>
+              {{stylist.star}}</a>
+            </div>
+
+            <div class="row">
+              <a>
+                Skills : {{stylist.skills}}<br>
+                Description : {{stylist.description}}<br>
+                Payment : {{stylist.payment}} Per Day.
+              </a>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="row">
+          <div class="col-sm=9">
+            <a>Booking link</a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- stylist section end -->
+
+
+  <!-- other stylists list start -->
+
+
+  <div class="container">
+    <div class="col-sm-12">
+      <div class="row">
+        <a>other stylists list max 10</a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- other stylist list end -->
+</div>
