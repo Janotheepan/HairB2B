@@ -38,7 +38,7 @@
           <div class="col-sm-6">
             <div class="row">
               <div class="flex-container flex-center">
-                <div id="calendar-container" class="flex-container flex-column flex-center">
+                <div id="calendar-container" class="flex-container flex-column">
                   <div class="flex-container">
                     <div class="calendar-days flex-container flex-center">Sun</div>
                     <div class="calendar-days flex-container flex-center">Mon</div>
@@ -48,9 +48,9 @@
                     <div class="calendar-days flex-container flex-center">Fri</div>
                     <div class="calendar-days flex-container flex-center">Sat</div>
                   </div>
-                  <div class="flex-container flex-wrap">
-                    <div *ngFor="let day of daysArr">
-                      <div class="calendar-day">{{day}}</div>
+                  <div class="flex-container">
+                    <div *ngFor = "let day of daysArr">
+                      <div class="calendar-day">{{day}} jj</div>
                     </div>
                   </div>
                 </div>

@@ -29,27 +29,28 @@
   border-radius: 10px;
   padding-left: 20px;
   height: 40px;
-  width: 250px;
+  width: 98%;
   color: blue;
 }
 .a-search select{
   border-radius: 10px;
   padding-left: 20px;
   height: 40px;
-  width: 250px;
+  width: 98%;
 }
 #calendar-container{
   width: 462px;
 }
 .calendar-days{
   width: 60px;
-  height: 60px;
+  height: 40px;
   background-color: #669999;
-  border: 3px solid #E5E4E2;
+  border: 3px solid #c2c2c2;
+  text-align: center;
 }
 .calendar-day{
   width: 60px;
   height: 60px;
   background-color: #669999;
-  border: 3px solid #E5E4E2;
+  border: 3px solid #c2c2c2;
 }

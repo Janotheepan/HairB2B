@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-// import {AppStore} from './app.service';
+import {Component, OnInit,} from '@angular/core';
+// import {AppState} from 'app.service';
 import * as moment from 'moment';
 
 @Component({
@@ -9,7 +9,7 @@ import * as moment from 'moment';
 })
 export class StylistComponent implements OnInit {
    stylist = {
-     profile_pic: './images/stylist/jj.jpg',
+     profile_pic: 'images/stylist/jj.jpg',
      name: 'Jano',
      star: '*****',
      skills: 'Colouring',
@@ -27,10 +27,15 @@ export class StylistComponent implements OnInit {
     this.daysArr = this.createCalendar(this.date);
   }
 
-  createCalendar(month) {
+  public createCalendar(month) {
     const firstDay = moment(month).startOf('M');
-    const days = Array.apply(null, {length: month.daysInMonths()})
-      .map(Number.call, Number);
+    const days = Array.apply(null, { length: month.daysInMonths() })
+      .map(n => {
+        return moment(firstDay).add(n, 'd');
+      });
+    for (let n = 0; n < firstDay.weekday(); n++) {
+      days.unshift(null);
+    }
     return days;
   }
 }
