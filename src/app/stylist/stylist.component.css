@@ -38,3 +38,18 @@
   height: 40px;
   width: 250px;
 }
+#calendar-container{
+  width: 462px;
+}
+.calendar-days{
+  width: 60px;
+  height: 60px;
+  background-color: #669999;
+  border: 3px solid #E5E4E2;
+}
+.calendar-day{
+  width: 60px;
+  height: 60px;
+  background-color: #669999;
+  border: 3px solid #E5E4E2;
+}
