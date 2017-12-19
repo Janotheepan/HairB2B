@@ -28,11 +28,10 @@ export class StylistComponent implements OnInit {
   }
 
   public createCalendar(month) {
-    const firstDay = moment(month).startOf('M');
-    const days = Array.apply(null, { length: month.daysInMonths() })
-      .map(n => {
-        return moment(firstDay).add(n, 'd');
-      });
+    let firstDay = moment(month).startOf('M');
+    let days = Array.apply(null, { length: month.daysInMonth() + 1})
+      .map(Number.call, Number)
+      .slice(1);
     for (let n = 0; n < firstDay.weekday(); n++) {
       days.unshift(null);
     }

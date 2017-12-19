@@ -40,18 +40,18 @@
               <div class="flex-container flex-center">
                 <div id="calendar-container" class="flex-container flex-column">
                   <div class="flex-container">
-                    <div class="calendar-days flex-container flex-center">Sun</div>
-                    <div class="calendar-days flex-container flex-center">Mon</div>
-                    <div class="calendar-days flex-container flex-center">Tue</div>
-                    <div class="calendar-days flex-container flex-center">Wed</div>
-                    <div class="calendar-days flex-container flex-center">Thu</div>
-                    <div class="calendar-days flex-container flex-center">Fri</div>
-                    <div class="calendar-days flex-container flex-center">Sat</div>
+                    <a class="calendar-days flex-container flex-center">Sun</a>
+                    <a class="calendar-days flex-container flex-center">Mon</a>
+                    <a class="calendar-days flex-container flex-center">Tue</a>
+                    <a class="calendar-days flex-container flex-center">Wed</a>
+                    <a class="calendar-days flex-container flex-center">Thu</a>
+                    <a class="calendar-days flex-container flex-center">Fri</a>
+                    <a class="calendar-days flex-container flex-center">Sat</a>
                   </div>
                   <div class="flex-container">
-                    <div *ngFor = "let day of daysArr">
-                      <div class="calendar-day">{{day}} jj</div>
-                    </div>
+                    <a *ngFor = "let day of daysArr">
+                      <a class="calendar-day">{{day}}</a>
+                    </a>
                   </div>
                 </div>
               </div>

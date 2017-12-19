@@ -8,6 +8,7 @@ import { StylistComponent } from './stylist/stylist.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
 
 import {RouterModule , Routes} from '@angular/router';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,9 @@ const routes: Routes = [
   },
   {
     path : 'complaints' , component : ComplaintsComponent
+  },
+  {
+    path : 'login' , component : LoginComponent
   }
 ];
 
@@ -26,7 +30,8 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     StylistComponent,
-    ComplaintsComponent
+    ComplaintsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
