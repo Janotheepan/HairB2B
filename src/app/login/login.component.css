@@ -1,0 +1,21 @@
+
+.linkleft{
+  text-align: right;
+}
+.linkright{
+  text-align: left;
+}
+input{
+  width: 250px;
+  height: 25px;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+input[type="submit"]{
+  background-color: skyblue;
+  font-weight: bolder;
+}
+#alg{
+  color: white;
+  font-size: 14px;
+}
