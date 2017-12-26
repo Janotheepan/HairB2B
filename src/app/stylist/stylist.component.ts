@@ -1,4 +1,4 @@
-import {Component, OnInit,} from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 // import {AppState} from 'app.service';
 import * as moment from 'moment';
 
@@ -10,7 +10,7 @@ import * as moment from 'moment';
 })
 export class StylistComponent implements OnInit {
    stylist = {
-     profile_pic: '/images/stylist/1.jpeg',
+     profile_pic: 'images/stylist/1.jpg',
      name: 'Jano',
      star: '*****',
      skills: 'Colouring',
@@ -18,7 +18,6 @@ export class StylistComponent implements OnInit {
      payment: '$250'
    };
    public date = moment();
-
    public daysArr;
 
   constructor() {
@@ -33,10 +32,9 @@ export class StylistComponent implements OnInit {
     }
     return moment().format('L') === day.format('L');
   }
-
   public createCalendar(month) {
-    let firstDay = moment(month).startOf('M');
-    let days = Array.apply(null, { length: month.daysInMonth()})
+    const firstDay = moment(month).startOf('M');
+    const days = Array.apply(null, { length: month.daysInMonth()})
       .map(Number.call, Number)
       .map((n) => {
         return moment(firstDay).add(n, 'd');

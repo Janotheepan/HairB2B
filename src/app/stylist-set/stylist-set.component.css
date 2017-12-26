@@ -1,0 +1,10 @@
+.box-devider{
+  padding-top: 3px;
+}
+#stylist-list{
+  width: 92%;
+  height: auto;
+  border-radius: 5px;
+  padding-top: 10px;
+  background-color: #D7DBDD;
+}

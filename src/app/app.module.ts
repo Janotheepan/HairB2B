@@ -9,6 +9,10 @@ import { ComplaintsComponent } from './complaints/complaints.component';
 
 import {RouterModule , Routes} from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { AdvanceSearchComponent } from './advance-search/advance-search.component';
+import { StylistSetComponent } from './stylist-set/stylist-set.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 const routes: Routes = [
@@ -23,7 +27,19 @@ const routes: Routes = [
   },
   {
     path : 'login' , component : LoginComponent
-  }
+  },
+  {
+    path : 'search_results' , component : SearchResultsComponent
+  },
+  {
+    path : 'advance_search' , component : AdvanceSearchComponent
+  },
+  {
+    path : 'stylist_set' , component : StylistSetComponent
+  },
+    {
+      path : 'signup' , component : SignupComponent
+    }
 ];
 
 @NgModule({
@@ -32,7 +48,11 @@ const routes: Routes = [
     HomeComponent,
     StylistComponent,
     ComplaintsComponent,
-    LoginComponent
+    LoginComponent,
+    SearchResultsComponent,
+    AdvanceSearchComponent,
+    StylistSetComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

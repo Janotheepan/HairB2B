@@ -8,38 +8,19 @@
   <div class="container">
     <div class="row">
 
-
-      <div id="advance-serch" class="col-sm-3">
-        <form class="a-search">
-          <h4>Search By,</h4>
-          <p>Name</p>
-          <input type="text" name="name" placeholder="Name">
-          <p>Skill</p>
-          <input type="text" name="skill" placeholder="Preferred Skill">
-          <p>Start Date</p>
-          <input type="date" name="date">
-          <p>price</p>
-          <input type="text" name="price" placeholder="Accepted Price">
-          <p>Location</p>
-          <input type="text" name="location" placeholder="Preferred Location">
-          <p>Job Type</p>
-          <select name="job_type">
-            <option name="educator">Educator</option>
-            <option name="hair_stylist">Hair Stylist</option>
-            <option name="assistant">Assistant</option>
-          </select>
-        </form>
+      <div id="advance" class="col-sm-4">
+        <app-advance-search></app-advance-search>
       </div>
 
 
-      <div class="col-sm-9">
+      <div class="col-sm-8">
         <div class="row">
 
-          <div class="col-sm-9">
+          <div class="col-sm-8">
             <div class="row">
-              <div class="flex-container flex-center">
-                <div id="calendar-container" class="flex-container flex-column">
-                  <div class="alng flex-container flex-center">
+              <div class="flex-center">
+                <div id="calendar-container">
+                  <div class="alng flex-center">
                     <a class="fa fa-chevron-left" (click)="previousMonth()"></a>
                     <a class="width-25px"></a>
                     <a class="alng">{{date.format("MMMM")}} {{date.format("YYYY")}}</a>
@@ -47,30 +28,30 @@
                     <a class="fa fa-chevron-right" (click)="nextMonth()"></a>
                   </div>
                   <div class="height-20px"></div>
-                  <div class="flex-container">
-                    <div class="calendar-days flex-container flex-center">Sun</div>
-                    <div class="calendar-days flex-container flex-center">Mon</div>
-                    <div class="calendar-days flex-container flex-center">Tue</div>
-                    <div class="calendar-days flex-container flex-center">Wed</div>
-                    <div class="calendar-days flex-container flex-center">Thu</div>
-                    <div class="calendar-days flex-container flex-center">Fri</div>
-                    <div class="calendar-days flex-container flex-center">Sat</div>
+                  <div class="flex-column">
+                    <button id="leave" class="calendar-days">Sun</button>
+                    <button class="calendar-days">Mon</button>
+                    <button class="calendar-days">Tue</button>
+                    <button class="calendar-days">Wed</button>
+                    <button class="calendar-days">Thu</button>
+                    <button class="calendar-days">Fri</button>
+                    <button class="calendar-days">Sat</button><br>
+                    <div class="height-20px"></div>
                   </div>
-                  <div class="flex-container">
-                    <a *ngFor = "let day of daysArr">
-                      <div class="calendar-days flex-container flex-center" (click)="selectDate(day)" [ngClass] = "{'inactive':!day, 'today': todayCheck(day)}">{{day?.date()}}</div>
-                    </a>
-                  </div>
-                </div>
+                  <a class="flex-column" *ngFor = "let day of daysArr">
+                      <button class="calendar-day" (click)="selectedDate(day)" [ngClass] = "{'inactive':!day, 'today': todayCheck(day)}">{{day?.date()}}</button>
+                  </a>
+               </div>
               </div>
             </div>
           </div>
 
-          <div class="col-sm-3">
+          <div class="col-sm-4">
             <div class="row">
               <a>{{stylist.name}}<br>
-              <img src="{{stylist.profile_pic}}" class="profile_picture"> <br>
-              {{stylist.star}}</a>
+                <img src="{{stylist.profile_pic}}" class="profile_picture"/><br>
+                {{stylist.star}}
+              </a>
             </div>
 
             <div class="row">
@@ -82,35 +63,48 @@
             </div>
           </div>
 
-
         </div>
 
         <div class="row">
-          <div class="col-sm=9">
-            <a>Booking link</a>
+          <div class="col-sm=8">
+            <div class="bookform container">
+              <div class="row">
+                <div class="col-sm-9">
+                  <br>
+                  <input type="text" name="startdate" placeholder="Start Date"><br>
+                  <div class="height-5px"></div>
+                  <input type="text" name="enddate" placeholder="End Date"><br>
+                  <div class="height-5px"></div>
+                  <input type="radio" name="time" value="1">Morning &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="time" value="2">Evening
+                </div>
+
+                <div class="col-sm-3">
+                  <br><br>
+                  <input type="submit" name="submit" value="Book Now">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
 
       </div>
     </div>
-  </div>
 
   <!-- stylist section end -->
-
 
   <!-- other stylists list start -->
 
 
-  <div class="container">
+  <div class="row">
     <div class="col-sm-12">
-      <div class="row">
-        <a>other stylists list max 10</a>
+          <app-stylist-set></app-stylist-set>
       </div>
     </div>
   </div>
-
+</div>
 
   <!-- other stylist list end -->
 
-</div>
+

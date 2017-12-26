@@ -1,0 +1,19 @@
+<div class="box-devider" *ngFor="let result of results">
+  <div id="stylist-list" class="row">
+    <div class="col-sm-4">
+      <a>
+        {{result.name}}<br>
+        <img src="{{result.images}}" /><br>
+        {{result.stars}}<br>
+      </a>
+    </div>
+    <div class="col-sm-8">
+      <a>
+        {{result.desc}}<br>
+        {{result.rate}}<br>
+        {{result.skill}}<br>
+      </a>
+    </div>
+  </div>
+</div>
+<br>
