@@ -8,3 +8,14 @@
   padding-top: 10px;
   background-color: #D7DBDD;
 }
+.profile_picture{
+  height: 150px;
+  width: 150px;
+  border-radius: 10px;
+}
+#design{
+  padding-left: 100px;
+}
+#desg{
+  padding-left: 25px;
+}

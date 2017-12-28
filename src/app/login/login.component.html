@@ -1,18 +1,28 @@
 
-<div id="alg" class="container">
-  <div class="row">
-    <p><input type="text" placeholder="E-Mail"> </p>
+<br>
+<br>
+  <div *ngIf="!isSignup">
+    <div id="alg" class="container">
+      <div class="row">
+        <p><input type="text" placeholder="E-Mail"> </p>
+      </div>
+      <div class="row">
+        <p><input type="text" placeholder="Password"> </p>
+      </div>
+      <div id="submit" class="row">
+        <input type="submit" value="submit" name="submit">
+      </div>
+      <br>
+      <div class="row">
+        <a class="linkleft" href="#">Forget Password</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="linkright" (click)="toggleSignup()">New To HairB2B</a>
+      </div>
+    </div>
   </div>
-  <div class="row">
-    <p><input type="text" placeholder="Password"> </p>
-  </div>
-  <div id="submit" class="row">
-    <input type="submit" value="submit" name="submit">
-  </div>
-  <br>
-  <div class="row">
-    <a class="linkleft">Forget Password</a>
-    <a class="linkright">New To HairB2B</a>
-  </div>
+
+
+<div *ngIf="isSignup">
+  <app-signup></app-signup>
 </div>
 
+<br>

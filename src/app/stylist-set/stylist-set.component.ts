@@ -9,7 +9,7 @@ export class StylistSetComponent implements OnInit {
  results: any[] = [
    {
      name : 'John',
-     images : '../images/stylist/1.jpg',
+     images : '../../assets/images/1.jpg',
      stars : '*****',
      desc : 'good styler',
      rate : '250',
@@ -17,7 +17,7 @@ export class StylistSetComponent implements OnInit {
    },
    {
      name : 'Jano',
-     images : '../images/stylist/2.jpg',
+     images : '../../assets/images/1.jpg',
      stars : '****',
      desc : 'very good styler',
      rate : '280',
@@ -25,7 +25,7 @@ export class StylistSetComponent implements OnInit {
    },
    {
      name : 'Shivu',
-     images : '../images/stylist/3.jpg',
+     images : '../../assets/images/1.jpg',
      stars : '*****',
      desc : 'good styler',
      rate : '180',
@@ -33,7 +33,7 @@ export class StylistSetComponent implements OnInit {
    },
    {
      name : 'Kisho',
-     images : '../images/stylist/4.jpg',
+     images : '../../assets/images/1.jpg',
      stars : '**',
      desc : 'good styler',
      rate : '2500',
