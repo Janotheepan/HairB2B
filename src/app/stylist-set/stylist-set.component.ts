@@ -9,7 +9,7 @@ export class StylistSetComponent implements OnInit {
  results: any[] = [
    {
      name : 'John',
-     images : '../../assets/images/1.jpg',
+     images : '../../assets/images/peter.jpg',
      stars : '*****',
      desc : 'good styler',
      rate : '250',
@@ -17,7 +17,7 @@ export class StylistSetComponent implements OnInit {
    },
    {
      name : 'Jano',
-     images : '../../assets/images/1.jpg',
+     images : '../../assets/images/john.jpg',
      stars : '****',
      desc : 'very good styler',
      rate : '280',
@@ -25,7 +25,7 @@ export class StylistSetComponent implements OnInit {
    },
    {
      name : 'Shivu',
-     images : '../../assets/images/1.jpg',
+     images : '../../assets/images/smitha.jpg',
      stars : '*****',
      desc : 'good styler',
      rate : '180',
@@ -33,13 +33,13 @@ export class StylistSetComponent implements OnInit {
    },
    {
      name : 'Kisho',
-     images : '../../assets/images/1.jpg',
+     images : '../../assets/images/diana.jpg',
      stars : '**',
      desc : 'good styler',
      rate : '2500',
      skill : 'dresser'
    }
- ]
+ ];
 
   constructor() { }
 

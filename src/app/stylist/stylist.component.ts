@@ -10,7 +10,7 @@ import * as moment from 'moment';
 })
 export class StylistComponent implements OnInit {
    stylist = {
-     profile_pic: '../../assets/images/1.jpg',
+     profile_pic: '../../assets/images/john.jpg',
      name: 'Jano',
      star: '*****',
      skills: 'Colouring',
