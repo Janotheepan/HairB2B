@@ -52,4 +52,8 @@ export class StylistComponent implements OnInit {
     this.date.subtract(1, 'M');
     this.daysArr = this.createCalendar(this.date);
   }
+  public possibleDay(day) {
+    const check = moment();
+    return (day < check);
+  }
 }

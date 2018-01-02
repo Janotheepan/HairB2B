@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { SignupService } from './signup.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -9,11 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   isLogin: boolean = false;
-  isSignup: boolean = false;
-  constructor (private newservice: SignupService) {}
-  ngOnInit () {
-    console.log(this.newservice.success());
-  }
+  constructor () {}
+  ngOnInit () {  }
   toggleLogin() {
     this.isLogin = !this.isLogin;
   }

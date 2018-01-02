@@ -19,3 +19,11 @@
 #desg{
   padding-left: 25px;
 }
+.right{
+  align-content: center;
+}
+#btd{
+  border-radius: 5px;
+  background-color: #1ab7ea;
+  font-weight: bolder;
+}

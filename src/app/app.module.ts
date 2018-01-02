@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { SignupService} from './signup.service';
 import { HomeComponent } from './home/home.component';
 import { StylistComponent } from './stylist/stylist.component';
 import { ComplaintsComponent } from './complaints/complaints.component';
@@ -15,6 +14,9 @@ import { AdvanceSearchComponent } from './advance-search/advance-search.componen
 import { StylistSetComponent } from './stylist-set/stylist-set.component';
 import { SignupComponent } from './signup/signup.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpModule} from '@angular/http';
+
+import {UserService} from './services/user.service';
 
 
 const routes: Routes = [
@@ -62,7 +64,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [SignupService],
+  providers: [UserService],
   bootstrap: [AppComponent],
 })
 

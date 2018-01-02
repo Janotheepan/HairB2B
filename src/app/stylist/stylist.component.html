@@ -39,7 +39,7 @@
                     <div class="height-20px"></div>
                   </div>
                   <a class="flex-column" *ngFor = "let day of daysArr">
-                      <button class="calendar-day" (click)="selectedDate(day)" [ngClass] = "{'inactive':!day, 'today': todayCheck(day)}">{{day?.date()}}</button>
+                      <button class="calendar-day" [disabled]="possibleDay(day)" (click)="selectedDate(day)" [ngClass] = "{'inactive':!day, 'today': todayCheck(day)}">{{day?.date()}}</button>
                   </a>
                </div>
               </div>
@@ -93,7 +93,7 @@
     </div>
 
   <!-- stylist section end -->
-
+<br>
   <!-- other stylists list start -->
 
 

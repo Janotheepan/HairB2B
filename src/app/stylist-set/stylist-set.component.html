@@ -1,18 +1,23 @@
-<div class="box-devider" *ngFor="let result of results">
+<div class="box-devider" *ngFor="let name of names">
   <div id="stylist-list" class="row">
-    <div id="desg" class="col-sm-md-4">
+    <div id="desg" class="col-sm-md-2">
       <a>
-        <img src="{{result.images}}" class="profile_picture" /><br>
+        <img src="{{name.profile_pic_path}}" class="profile_picture" /><br>
       </a>
     </div>
-    <div id="design" class="col-sm-md-8">
+    <div id="design" class="col-sm-md-6">
       <a>
-        <h4>{{result.name}}</h4><br>
-        {{result.stars}}<br>
-        {{result.desc}}<br>
-        {{result.rate}}<br>
-        {{result.skill}}<br>
+        <h4>{{name.first_name}}&nbsp;&nbsp;
+        {{name.last_name}}</h4>
+        {{name.description}}<br>
+        Stars :- {{name.rating}}<br>
+        {{name.address}}
       </a>
+    </div>
+    <div class="col-sm-md-4">
+      <div class="right">
+        <button id="btd"><a href="../stylist/{{name.id}}" class="btn btn-default">View Details</a></button>
+      </div>
     </div>
   </div>
 </div>
