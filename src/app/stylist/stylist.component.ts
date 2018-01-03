@@ -1,6 +1,9 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 // import {AppState} from 'app.service';
 import * as moment from 'moment';
+import { UserService } from '../services/user.service';
+import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -9,22 +12,24 @@ import * as moment from 'moment';
   styleUrls: ['./stylist.component.css']
 })
 export class StylistComponent implements OnInit {
-   stylist = {
-     profile_pic: '../../assets/images/john.jpg',
-     name: 'Jano',
-     star: '*****',
-     skills: 'Colouring',
-     description: 'I can work well and colour perfectly.',
-     payment: '$250'
-   };
+  stylists: Stylists[];
+  rel: '';
+  query: any;
    public date = moment();
    public daysArr;
 
-  constructor() {
+  constructor(private route: ActivatedRoute, private userService: UserService) {
   }
 
   public ngOnInit() {
     this.daysArr = this.createCalendar(this.date);
+    this.userService.getStylist().subscribe((stylists) => {
+      this.stylists = stylists;
+    });
+    this.route.queryParams.subscribe(ss => {
+      this.query = ss;
+      console.log(this.query);
+    });
   }
   public todayCheck(day) {
     if (!day) {
@@ -56,4 +61,14 @@ export class StylistComponent implements OnInit {
     const check = moment();
     return (day < check);
   }
+}
+
+export interface Stylists {
+  id: number;
+  first_name: string;
+  last_name: string;
+  profile_pic_path: string;
+  address: string;
+  description: string;
+  rating: number;
 }

@@ -6,15 +6,19 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <div class="header-text">
-              <h2>You Can Hire An Educator, An Assistant Or A HairStylist <span class="typing"></span> </h2>
-              <p>To complete your Hair Styling Needs Perfectly...</p>
-              <h2><input type="text" placeholder="Search Here..."></h2>
+              <h2>You Can Hire An Educator, An Assistant Or A HairStylist <span class="typing"></span> </h2><br>
+              <p>To complete your Hair Styling Needs Perfectly...</p><br><br>
+             <form>
+               <h4>
+                 <input type="radio" name="searchtype" value="Name" checked [(ngModel)]="radiobtsearch">  Search By Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="radio" name="searchtype" value="Skill" [(ngModel)]="radiobtsearch">  Search By Skill
+               </h4>
 
-              <div class="margin-top-40" align="center">
-                <button class="button button-style button-style-icon fa fa-long-arrow-right smoth-scroll">Search By Name</button>
-                <button class="button button-style button-style-icon fa fa-long-arrow-right smoth-scroll">Search By Skill</button>
+               <h2>
+                 <input type="text" placeholder="Search the Stylist by {{radiobtsearch}}" [(ngModel)]="searchterm">
+               </h2>
+             </form>
 
-              </div>
 
             </div>
           </div>
@@ -33,19 +37,19 @@
       <div class="col-sm-12">
         <div class="section-title">
           <h2>Stylists</h2>
-          <p>The top Famous Stylists in Trend</p>
+          <p>The top Famous Highly rated Stylists in Trend</p>
         </div>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" >
       <div class="col-sm-4">
         <div class="testimonial-carousel-list margin-top-20">
 
           <div class="testimonial-word text-center">
-            <img src="images/logo/logo1.jpg" class="img-responsive" alt="">
-            <h2>kkkg</h2>
-            <p>lll </p>
+            <img src="{{name1.profilr_pic_path}}" class="img-responsive" alt="">
+            <h2>{{name1.first_name}} {{naame1.last_name}}</h2>
+            <p>{{name1.description}} </p>
           </div>
         </div>
       </div>
@@ -92,16 +96,14 @@
 
       <div class="col-md-4 col-sm-6">
         <div class="services-detail">
-          <i class="fa fa-mobile color-1"></i>
           <h3>To Salon</h3>
           <hr>
-          <p>Can find a trending hair Stylist and book him to improve their hair styling demands from the customers.</p>
+          <p>Can find a trending hair Stylist and book the Hair-Stylist to improve their hair styling demands from the customers.</p>
         </div>
       </div>
 
       <div class="col-md-4 col-sm-6">
         <div class="services-detail">
-          <i class="fa fa-tablet color-2"></i>
           <h3>To Stylist</h3>
           <hr>
           <p>Can get work opportunoties from several salons and can check the salon's profile to evaluate the high rated salons.</p>
@@ -110,10 +112,9 @@
 
       <div class="col-md-4 col-sm-6">
         <div class="services-detail">
-          <i class="fa fa-code color-3"></i>
           <h3>To People</h3>
           <hr>
-          <p>Can search both Salons and Stylists to fulfill their needs on Hair-Styling.</p>
+          <p>Can search both Salons and Stylists to fulfill their needs on Hair-Styling. Users can easily categorize the Hair-Stylists</p>
         </div>
       </div>
 
@@ -122,6 +123,8 @@
     </div>
   </div>
 </section>
+
+
 <!-- Services End -->
 
 <!-- All Javascript Plugins  -->

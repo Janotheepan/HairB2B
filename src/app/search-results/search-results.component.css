@@ -4,7 +4,12 @@
   width: 100%;
 }
 #alng1{
-  padding-left: 50px;
+  padding-left: 80px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+#alng2{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 100px;
 }

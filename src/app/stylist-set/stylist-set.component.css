@@ -9,8 +9,8 @@
   background-color: #D7DBDD;
 }
 .profile_picture{
-  height: 150px;
-  width: 150px;
+  height: 120px;
+  width: 120px;
   border-radius: 10px;
 }
 #design{
@@ -26,4 +26,8 @@
   border-radius: 5px;
   background-color: #1ab7ea;
   font-weight: bolder;
+}
+.box{
+  width: 200px;
+  border: none;
 }

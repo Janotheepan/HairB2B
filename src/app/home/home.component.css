@@ -70,6 +70,9 @@ h5,
 h6 {
   font-family: 'Poppins', sans-serif;
 }
+h4{
+  color: whitesmoke;
+}
 
 a {
   text-decoration: none;
@@ -339,7 +342,7 @@ body.loaded #preloader{
 
 .home-section-background {
   position: relative;
-  height: 700px;
+  height: 850px;
   background: url(../images/bg/bg.jpg);
   background-size: cover;
   z-index: 1;
@@ -379,12 +382,12 @@ body.loaded #preloader{
 .home-section-background h2 input {
   color: #000000;
   font-size: 30px;
-  width: 55%;
+  width: 70%;
   height: 50px;
   letter-spacing: 5px;
   margin: 0;
   border-radius: 20px;
-  padding-left: 5px;
+  padding-left: 15px;
 }
 .home-section-background h3 {
   color: #f8f8f8;

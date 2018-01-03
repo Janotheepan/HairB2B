@@ -6,17 +6,17 @@
       </a>
     </div>
     <div id="design" class="col-sm-md-6">
-      <a>
+      <a class="box">
         <h4>{{name.first_name}}&nbsp;&nbsp;
         {{name.last_name}}</h4>
         {{name.description}}<br>
-        Stars :- {{name.rating}}<br>
+        Stars :- {{name.rating}} *<br>
         {{name.address}}
       </a>
     </div>
     <div class="col-sm-md-4">
       <div class="right">
-        <button id="btd"><a href="../stylist/{{name.id}}" class="btn btn-default">View Details</a></button>
+        <button id="btd"><a routerLink="../stylist" [queryParams]="{ss: name.id}" class="btn btn-default">View Details</a></button>
       </div>
     </div>
   </div>
