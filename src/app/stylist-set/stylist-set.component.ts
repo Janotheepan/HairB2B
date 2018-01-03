@@ -10,12 +10,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class StylistSetComponent implements OnInit {
   names: Names[];
+  charges: Charges[];
   rel: '';
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.userService.getNames().subscribe((names) => {
       this.names = names;
+    });
+    this.userService.getCharge().subscribe((charges) => {
+      this.charges = charges;
     });
   }
 
@@ -29,4 +33,10 @@ export interface Names {
   address: string;
   description: string;
   rating: number;
+}
+export interface Charges {
+  id: number;
+  stylist_id: number;
+  time_slot: string;
+  charge: any;
 }

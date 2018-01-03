@@ -6,6 +6,8 @@ import {Names} from '../stylist-set/stylist-set.component';
 import {Names1} from '../home/home.component';
 import {Observable} from 'rxjs/Observable';
 import {Stylists} from '../stylist/stylist.component';
+import {Charges} from '../stylist-set/stylist-set.component';
+import {Prices} from '../stylist/stylist.component';
 
 @Injectable()
 export class UserService {
@@ -21,5 +23,13 @@ export class UserService {
 
   getStylist(): Observable<Stylists[]> {
     return this.http.get<Stylists[]>('http://localhost/demo/public/trn_stylists');
+  }
+
+  getCharge(): Observable<Charges[]> {
+    return this.http.get<Charges[]>('http://localhost/demo/public/trn_charges');
+  }
+
+  getPrice(): Observable<Prices[]> {
+    return this.http.get<Prices[]>('http://localhost/demo/public/trn_charges');
   }
 }

@@ -46,21 +46,26 @@
             </div>
           </div>
 
-          <div class="col-sm-4" *ngFor="let stylist of stylists">
-              <div class="row" *ngIf="stylist.id == this.query.ss">
-                <a><h2>{{stylist.first_name}}</h2><br>
-                  <img src="{{stylist.profile_pic_path}}" class="profile_picture" alt="sdfksdpfk"><br>
+          <div class="col-sm-4">
+          <div *ngFor="let stylist of stylists">
+          <div *ngIf="stylist.id == this.query.ss">
+              <div class="row">
+                <a><h2 class="heading">{{stylist.first_name}}</h2>
+                  <img src="{{stylist.profile_pic_path}}" class="profile_picture" alt="sdfksdpfk"><br><p></p>
 
                 </a>
               </div>
 
-              <div class="row" *ngIf="stylist.id == this.query.ss">
+              <div class="row">
                 <a>
-                  Skills : <br>
-                  Description : {{stylist.description}}<br>
-                  Payment : xx Per Day.
+                  Skills : <br><p></p>
+                  Description : {{stylist.description}}<br><p></p>
+                  Payment : <a *ngFor="let price of prices"><a *ngIf="stylist.id == price.stylist_id && price.time_slot == 'Morning'">{{price.charge}}</a></a> Per Morning.
+                  Payment : <a *ngFor="let price of prices"><a *ngIf="stylist.id == price.stylist_id && price.time_slot == 'Evening'">{{price.charge}}</a></a> Per Evening.
                 </a>
               </div>
+            </div>
+          </div>
           </div>
 
         </div>

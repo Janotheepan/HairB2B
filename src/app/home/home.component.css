@@ -599,6 +599,11 @@ ul.portfolio li.active {
   -webkit-transition: .3s;
   transition: .3s;
 }
+.bb{
+  height: 100px;
+  width: 100px;
+  border-radius: 10px;
+}
 
 .portfolio .item:hover a:before{
   top: 40%;

@@ -11,7 +11,9 @@
         {{name.last_name}}</h4>
         {{name.description}}<br>
         Stars :- {{name.rating}} *<br>
-        {{name.address}}
+        Address :- {{name.address}}<br>
+        The charge for Morning(8-12) :-<a *ngFor="let charge of charges"><a *ngIf="name.id == charge.stylist_id && charge.time_slot == 'Morning'">{{charge.charge}}</a></a><br>
+        The charge for Evening(1-5) :-<a *ngFor="let charge of charges"><a *ngIf="name.id == charge.stylist_id && charge.time_slot == 'Evening'">{{charge.charge}}</a></a>
       </a>
     </div>
     <div class="col-sm-md-4">

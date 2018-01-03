@@ -13,6 +13,7 @@ import { map } from 'rxjs/operators';
 })
 export class StylistComponent implements OnInit {
   stylists: Stylists[];
+  prices: Prices[];
   rel: '';
   query: any;
    public date = moment();
@@ -25,6 +26,9 @@ export class StylistComponent implements OnInit {
     this.daysArr = this.createCalendar(this.date);
     this.userService.getStylist().subscribe((stylists) => {
       this.stylists = stylists;
+    });
+    this.userService.getPrice().subscribe((prices) => {
+      this.prices = prices;
     });
     this.route.queryParams.subscribe(ss => {
       this.query = ss;
@@ -71,4 +75,10 @@ export interface Stylists {
   address: string;
   description: string;
   rating: number;
+}
+export interface Prices {
+  id: number;
+  stylist_id: number;
+  time_slot: string;
+  charge: any;
 }
