@@ -4,6 +4,7 @@ import * as moment from 'moment';
 import { UserService } from '../services/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
+import { Skills } from '../stylist-set/stylist-set.component';
 
 
 @Component({
@@ -14,6 +15,7 @@ import { map } from 'rxjs/operators';
 export class StylistComponent implements OnInit {
   stylists: Stylists[];
   prices: Prices[];
+  skills: Skills[];
   rel: '';
   query: any;
    public date = moment();
@@ -29,6 +31,9 @@ export class StylistComponent implements OnInit {
     });
     this.userService.getPrice().subscribe((prices) => {
       this.prices = prices;
+    });
+    this.userService.getSkills().subscribe((skills) => {
+      this.skills = skills;
     });
     this.route.queryParams.subscribe(ss => {
       this.query = ss;

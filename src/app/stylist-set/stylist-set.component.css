@@ -9,7 +9,7 @@
   background-color: #D7DBDD;
 }
 .profile_picture{
-  height: 120px;
+  height: 150px;
   width: 120px;
   border-radius: 10px;
 }
@@ -30,4 +30,15 @@
 .box{
   width: 200px;
   border: none;
+}
+.skillbtn{
+  background-color: #a6e1ec;
+  width: auto;
+  height: auto;
+  border-radius: 15px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
+.price{
+  color: #a94442;
 }

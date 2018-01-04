@@ -51,15 +51,15 @@
           <div *ngIf="stylist.id == this.query.ss">
               <div class="row">
                 <a><h2 class="heading">{{stylist.first_name}}</h2>
-                  <img src="{{stylist.profile_pic_path}}" class="profile_picture" alt="sdfksdpfk"><br><p></p>
+                  <img src="{{stylist.profile_pic_path}}" class="profile_picture"><br><p></p>
 
                 </a>
               </div>
 
               <div class="row">
                 <a>
-                  Skills : <br><p></p>
-                  Description : {{stylist.description}}<br><p></p>
+                  Skills : <a *ngFor="let skill of skills"><a *ngIf="stylist.id == skill.stylist_id"><button class="skillbtn">{{skill.Skill}}</button>&nbsp;&nbsp;</a></a><p></p>
+                  {{stylist.description}}<br><p></p>
                   Payment : <a *ngFor="let price of prices"><a *ngIf="stylist.id == price.stylist_id && price.time_slot == 'Morning'">{{price.charge}}</a></a> Per Morning.
                   Payment : <a *ngFor="let price of prices"><a *ngIf="stylist.id == price.stylist_id && price.time_slot == 'Evening'">{{price.charge}}</a></a> Per Evening.
                 </a>

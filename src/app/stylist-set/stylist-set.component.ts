@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class StylistSetComponent implements OnInit {
   names: Names[];
   charges: Charges[];
+  skills: Skills[];
   rel: '';
   constructor(private userService: UserService) { }
 
@@ -20,6 +21,9 @@ export class StylistSetComponent implements OnInit {
     });
     this.userService.getCharge().subscribe((charges) => {
       this.charges = charges;
+    });
+    this.userService.getSkills().subscribe((skills) => {
+      this.skills = skills;
     });
   }
 
@@ -39,4 +43,9 @@ export interface Charges {
   stylist_id: number;
   time_slot: string;
   charge: any;
+}
+export interface Skills {
+  id: number;
+  stylist_id: number;
+  skill: string;
 }
