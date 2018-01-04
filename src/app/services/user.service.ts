@@ -8,6 +8,8 @@ import {Stylists} from '../stylist/stylist.component';
 import {Charges} from '../stylist-set/stylist-set.component';
 import {Prices} from '../stylist/stylist.component';
 import {Skills} from '../stylist-set/stylist-set.component';
+import {Dates } from '../stylist/stylist.component';
+import { Locations } from '../stylist-set/stylist-set.component';
 
 @Injectable()
 export class UserService {
@@ -35,5 +37,13 @@ export class UserService {
 
   getSkills(): Observable<Skills[]> {
     return this.http.get<Skills[]>('http://localhost/demo/public/trn_stylist_skills');
+  }
+
+  getDates(): Observable<Dates[]> {
+    return this.http.get<Dates[]>('http://localhost/demo/public/trn_busy_dates');
+  }
+
+  getLocation(): Observable<Locations[]> {
+    return this.http.get<Locations[]>('http://localhost/demo/public/trn_prefferred_location');
   }
 }

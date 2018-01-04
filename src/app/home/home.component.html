@@ -17,13 +17,20 @@
                  <h2>
                    <input type="text" list="suggestname" placeholder="Search the Stylist by {{radiobtsearch}}..." [(ngModel)]="jj">
                    <datalist id="suggestname">
-                     <option *ngFor="let name of names" [value]="name.first_name"></option>
+                     <option *ngFor="let name of names" [value]="name.first_name+' '+name.last_name"></option>
                    </datalist>
                  </h2><br>
                </div>
                <div *ngIf="(radiobtsearch == 'Skill') ">
                  <h2>
-                   <input type="text" placeholder="Search the Stylist by {{radiobtsearch}}..." [(ngModel)]="jj">
+                   <input type="text" list="suggestskill" placeholder="Search the Stylist by {{radiobtsearch}}..." [(ngModel)]="jjj">
+                   <datalist id="suggestskill">
+                     <option value="Barber"></option>
+                     <option value="Dry Cutting"></option>
+                     <option value="Fading"></option>
+                     <option value="Makeup"></option>
+                     <option value="Shaving"></option>
+                   </datalist>
                  </h2><br>
                </div>
 

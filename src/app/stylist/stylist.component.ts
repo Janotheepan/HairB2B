@@ -5,6 +5,8 @@ import { UserService } from '../services/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Skills } from '../stylist-set/stylist-set.component';
+import _date = moment.unitOfTime._date;
+import { Locations } from '../stylist-set/stylist-set.component';
 
 
 @Component({
@@ -16,6 +18,8 @@ export class StylistComponent implements OnInit {
   stylists: Stylists[];
   prices: Prices[];
   skills: Skills[];
+  dates: Dates[];
+  locations: Locations[];
   rel: '';
   query: any;
   nam: any;
@@ -36,13 +40,19 @@ export class StylistComponent implements OnInit {
     this.userService.getSkills().subscribe((skills) => {
       this.skills = skills;
     });
+    this.userService.getDates().subscribe((dates) => {
+      this.dates = dates;
+    });
+    this.userService.getLocation().subscribe((locations) => {
+      this.locations = locations;
+    });
     this.route.queryParams.subscribe(ss => {
       this.query = ss;
-      console.log(this.query);
+      // console.log(this.query);
     });
     this.route.queryParams.subscribe(nm => {
       this.nam = nm;
-      console.log(this.nam);
+      // console.log(this.nam);
     });
   }
   public todayCheck(day) {
@@ -75,6 +85,7 @@ export class StylistComponent implements OnInit {
     const check = moment();
     return (day < check);
   }
+  public checkBusy(day) {  }
 }
 
 export interface Stylists {
@@ -91,4 +102,10 @@ export interface Prices {
   stylist_id: number;
   time_slot: string;
   charge: any;
+}
+export interface Dates {
+  id: number;
+  stylist_id: number;
+  time_slot: string;
+  date: string;
 }

@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpModule} from '@angular/http';
 
 import {UserService} from './services/user.service';
+import { FilterredStylistSetComponent } from './filterred-stylist-set/filterred-stylist-set.component';
 
 
 const routes: Routes = [
@@ -41,9 +42,12 @@ const routes: Routes = [
   {
     path : 'stylist_set' , component : StylistSetComponent
   },
-    {
-      path : 'signup' , component : SignupComponent
-    }
+  {
+    path : 'signup' , component : SignupComponent
+  },
+  {
+    path : 'filterred_stylist_set' , component : FilterredStylistSetComponent
+  }
 ];
 
 @NgModule({
@@ -56,7 +60,8 @@ const routes: Routes = [
     SearchResultsComponent,
     AdvanceSearchComponent,
     StylistSetComponent,
-    SignupComponent
+    SignupComponent,
+    FilterredStylistSetComponent
   ],
   imports: [
     BrowserModule,

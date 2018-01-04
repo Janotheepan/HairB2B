@@ -39,6 +39,14 @@
   padding-right: 8px;
   padding-left: 8px;
 }
+.skillbtn1 {
+  background-color: #ce8483;
+  width: auto;
+  height: auto;
+  border-radius: 15px;
+  padding-right: 8px;
+  padding-left: 8px;
+}
 .price{
   color: #a94442;
 }

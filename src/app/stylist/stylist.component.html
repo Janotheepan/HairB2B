@@ -39,7 +39,7 @@
                     <div class="height-20px"></div>
                   </div>
                   <a class="flex-column" *ngFor = "let day of daysArr">
-                      <button class="calendar-day" [disabled]="possibleDay(day)" (click)="selectedDate(day)" [ngClass] = "{'inactive':!day, 'today': todayCheck(day)}">{{day?.date()}}</button>
+                      <button class="calendar-day" [disabled]="possibleDay(day)" (click)="selectedDate(day)" [ngClass] = "{'inactive':!day, 'today': todayCheck(day), 'busy': checkBusy(day)}">{{day?.date()}}</button>
                   </a>
                </div>
               </div>
@@ -47,10 +47,11 @@
           </div>
 
           <div class="col-sm-4">
+            <br>
           <div *ngFor="let stylist of stylists">
-          <div *ngIf="stylist.id == this.query.ss || stylist.first_name == this.nam.nm">
+          <div *ngIf="stylist.id == this.query.ss || stylist.first_name+' '+stylist.last_name == this.nam.nm">
               <div class="row">
-                <a><h2 class="heading">{{stylist.first_name}}</h2>
+                <a><h2 class="heading">{{stylist.first_name}} {{stylist.last_name}}</h2>
                   <img src="{{stylist.profile_pic_path}}" class="profile_picture"><br><p></p>
 
                 </a>
@@ -58,8 +59,9 @@
 
               <div class="row">
                 <a>
-                  Skills : <a *ngFor="let skill of skills"><a *ngIf="stylist.id == skill.stylist_id"><button class="skillbtn">{{skill.Skill}}</button>&nbsp;&nbsp;</a></a><p></p>
-                  {{stylist.description}}<br><p></p>
+                  Skills : <a *ngFor="let skill of skills"><a *ngIf="stylist.id == skill.stylist_id"><button class="skillbtn">{{skill.Skill}}</button>&nbsp;&nbsp;</a></a><br>
+                  Preferred Location :- <a *ngFor="let location of locations"><a *ngIf="stylist.id == location.stylist_id"><button class="skillbtn1">{{location.location}}</button>&nbsp;&nbsp;</a></a><br>
+                  <br><p>{{stylist.description}}</p>
                   Payment : <a *ngFor="let price of prices"><a *ngIf="stylist.id == price.stylist_id && price.time_slot == 'Morning'">{{price.charge}}</a></a> Per Morning.
                   Payment : <a *ngFor="let price of prices"><a *ngIf="stylist.id == price.stylist_id && price.time_slot == 'Evening'">{{price.charge}}</a></a> Per Evening.
                 </a>
@@ -104,7 +106,7 @@
 
   <div class="row">
     <div class="col-sm-12">
-          <app-stylist-set></app-stylist-set>
+          <app-filterred-stylist-set></app-filterred-stylist-set>
       </div>
     </div>
   </div>
