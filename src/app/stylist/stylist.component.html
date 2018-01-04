@@ -48,7 +48,7 @@
 
           <div class="col-sm-4">
           <div *ngFor="let stylist of stylists">
-          <div *ngIf="stylist.id == this.query.ss">
+          <div *ngIf="stylist.id == this.query.ss || stylist.first_name == this.nam.nm">
               <div class="row">
                 <a><h2 class="heading">{{stylist.first_name}}</h2>
                   <img src="{{stylist.profile_pic_path}}" class="profile_picture"><br><p></p>

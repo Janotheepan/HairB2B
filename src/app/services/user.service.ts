@@ -3,7 +3,6 @@ import {Http} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {HttpClient} from '@angular/common/http';
 import {Names} from '../stylist-set/stylist-set.component';
-import {Names1} from '../home/home.component';
 import {Observable} from 'rxjs/Observable';
 import {Stylists} from '../stylist/stylist.component';
 import {Charges} from '../stylist-set/stylist-set.component';

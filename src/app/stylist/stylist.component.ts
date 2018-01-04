@@ -18,6 +18,7 @@ export class StylistComponent implements OnInit {
   skills: Skills[];
   rel: '';
   query: any;
+  nam: any;
    public date = moment();
    public daysArr;
 
@@ -38,6 +39,10 @@ export class StylistComponent implements OnInit {
     this.route.queryParams.subscribe(ss => {
       this.query = ss;
       console.log(this.query);
+    });
+    this.route.queryParams.subscribe(nm => {
+      this.nam = nm;
+      console.log(this.nam);
     });
   }
   public todayCheck(day) {

@@ -520,6 +520,14 @@ body.loaded #preloader{
   color: #fff;
 }
 
+.searchbtn{
+  background-color: skyblue;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+  font-weight: bolder;
+}
+
 
 /* About Me */
 
