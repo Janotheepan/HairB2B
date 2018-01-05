@@ -1,11 +1,11 @@
 <div class="box-devider" *ngFor="let name of names">
   <div id="stylist-list" class="row">
-    <div id="desg" class="col-sm-md-2">
+    <div id="desg" class="col-md-2">
       <a>
         <img src="{{name.profile_pic_path}}" class="profile_picture" /><br>
       </a>
     </div>
-    <div id="design" class="col-sm-md-6">
+    <div id="design" class="col-md-8">
       <a class="box">
         <h4>{{name.first_name}}&nbsp;&nbsp;
         {{name.last_name}}</h4>
@@ -17,7 +17,7 @@
         The charge for Evening(1-5) :-<a *ngFor="let charge of charges"><a *ngIf="name.id == charge.stylist_id && charge.time_slot == 'Evening'" class="price"> ${{charge.charge}}</a></a>
       </a>
     </div>
-    <div class="col-sm-md-4">
+    <div class="col-md-2">
       <div class="right">
         <button id="btd"><a routerLink="../stylist" [queryParams]="{ss: name.id}" class="btn btn-default">View Details</a></button>
       </div>

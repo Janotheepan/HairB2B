@@ -5,7 +5,7 @@
 
   <!-- stylist section start -->
 
-  <div class="container">
+   <div class="container">
     <div class="row">
 
       <div id="advance" class="col-sm-4">
@@ -39,7 +39,7 @@
                     <div class="height-20px"></div>
                   </div>
                   <a class="flex-column" *ngFor = "let day of daysArr">
-                      <button class="calendar-day" [disabled]="possibleDay(day)" (click)="selectedDate(day)" [ngClass] = "{'inactive':!day, 'today': todayCheck(day), 'busy': checkBusy(day)}">{{day?.date()}}</button>
+                      <button class="calendar-day" [disabled]="possibleDay(day)" (click)="selectedDate(day)" [ngClass] = "{'inactive':!day, 'today': todayCheck(day), 'selected': isSelected(day), 'busy': checkBusy(day)}">{{day?.date()}}</button>
                   </a>
                </div>
               </div>
@@ -75,22 +75,29 @@
         <div class="row">
           <div class="col-sm=8">
             <div class="bookform container">
-              <div class="row">
-                <div class="col-sm-9">
-                  <br>
-                  <input type="text" name="startdate" placeholder="Start Date"><br>
-                  <div class="height-5px"></div>
-                  <input type="text" name="enddate" placeholder="End Date"><br>
-                  <div class="height-5px"></div>
-                  <input type="radio" name="time" value="1">Morning &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                  <input type="radio" name="time" value="2">Evening
-                </div>
 
-                <div class="col-sm-3">
-                  <br><br>
+                <form [formGroup] = 'dateForm' class="formalign">
+                  <input type="text" formControlName="dateFrom" name="dateFrom" placeholder="DateFrom">
+                  <input type="text" formControlName="dateTo" name="dateTo" placeholder="DateTo">
                   <input type="submit" name="submit" value="Book Now">
-                </div>
-              </div>
+                </form>
+
+              <!--<div class="row">-->
+                <!--<div class="col-sm-9">-->
+                  <!--<br>-->
+                  <!--<input type="text" name="startdate" placeholder="Start Date"><br>-->
+                  <!--<div class="height-5px"></div>-->
+                  <!--<input type="text" name="enddate" placeholder="End Date"><br>-->
+                  <!--<div class="height-5px"></div>-->
+                  <!--<input type="radio" name="time" value="1">Morning &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                  <!--<input type="radio" name="time" value="2">Evening-->
+                <!--</div>-->
+
+                <!--<div class="col-sm-3">-->
+                  <!--<br><br>-->
+                  <!--<input type="submit" name="submit" value="Book Now">-->
+                <!--</div>-->
+              <!--</div>-->
             </div>
           </div>
         </div>

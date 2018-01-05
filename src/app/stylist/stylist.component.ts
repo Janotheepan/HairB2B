@@ -5,9 +5,13 @@ import { UserService } from '../services/user.service';
 import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Skills } from '../stylist-set/stylist-set.component';
-import _date = moment.unitOfTime._date;
 import { Locations } from '../stylist-set/stylist-set.component';
-
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators
+} from '@angular/forms';
 
 @Component({
   selector: 'app-stylist',
@@ -24,9 +28,18 @@ export class StylistComponent implements OnInit {
   query: any;
   nam: any;
    public date = moment();
+   public dateForm: FormGroup;
    public daysArr;
 
-  constructor(private route: ActivatedRoute, private userService: UserService) {
+  constructor(private route: ActivatedRoute, private userService: UserService, private fb: FormBuilder ) {
+    this.initDateForm();
+  }
+
+  public initDateForm() {
+    return this.dateForm = this.fb.group( {
+      dateFrom: [null, Validators.required],
+      dateTo: [null, Validators.required]
+    });
   }
 
   public ngOnInit() {
@@ -52,7 +65,7 @@ export class StylistComponent implements OnInit {
     });
     this.route.queryParams.subscribe(nm => {
       this.nam = nm;
-      // console.log(this.nam);
+       console.log(this.nam);
     });
   }
   public todayCheck(day) {
@@ -84,6 +97,34 @@ export class StylistComponent implements OnInit {
   public possibleDay(day) {
     const check = moment();
     return (day < check);
+  }
+
+  public isSelected(day) {
+    if (!day) {
+      return false;
+    }
+    const dateFrom = moment(this.dateForm.value.dateFrom, 'MM/DD/YYYY');
+    const dateTo = moment(this.dateForm.value.dateTo, 'MM/DD/YYYY');
+    if (this.dateForm.valid) {
+      return dateFrom.isSameOrBefore(day) && dateTo.isSameOrAfter(day);
+    }
+    if (this.dateForm.get('dateFrom').valid) {
+      return dateFrom.isSame(day);
+    }
+  }
+
+  public selectedDate(day) {
+    const dayFormatted = day.format('MM/DD/YYYY');
+    console.log(day);
+    if (this.dateForm.valid) {
+      this.dateForm.setValue({dateFrom: null, dateTo: null});
+      return;
+    }
+    if (this.dateForm.get('dateFrom').value) {
+      this.dateForm.get('dateFrom').patchValue(dayFormatted);
+    } else {
+      this.dateForm.get('dateTo').patchValue(dayFormatted);
+    }
   }
   public checkBusy(day) {  }
 }
