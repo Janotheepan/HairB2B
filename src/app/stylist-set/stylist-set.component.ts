@@ -13,6 +13,7 @@ export class StylistSetComponent implements OnInit {
   charges: Charges[];
   skills: Skills[];
   locations: Locations[];
+  jobroles: Jobroles[];
   rel: '';
   constructor(private userService: UserService) { }
 
@@ -28,6 +29,9 @@ export class StylistSetComponent implements OnInit {
     });
     this.userService.getLocation().subscribe((locations) => {
       this.locations = locations;
+    });
+    this.userService.getJobrole().subscribe((jobroles) => {
+      this.jobroles = jobroles;
     });
   }
 
@@ -57,4 +61,8 @@ export interface Locations {
   id: number;
   stylist_id: number;
   location: string;
+}
+export interface Jobroles {
+  id: number;
+  type: string;
 }

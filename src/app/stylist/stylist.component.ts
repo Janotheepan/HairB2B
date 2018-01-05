@@ -6,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { map } from 'rxjs/operators';
 import { Skills } from '../stylist-set/stylist-set.component';
 import { Locations } from '../stylist-set/stylist-set.component';
+import { Jobroles } from '../stylist-set/stylist-set.component';
 import {
   FormBuilder,
   FormControl,
@@ -24,6 +25,7 @@ export class StylistComponent implements OnInit {
   skills: Skills[];
   dates: Dates[];
   locations: Locations[];
+  jobroles: Jobroles[];
   rel: '';
   query: any;
   nam: any;
@@ -58,6 +60,9 @@ export class StylistComponent implements OnInit {
     });
     this.userService.getLocation().subscribe((locations) => {
       this.locations = locations;
+    });
+    this.userService.getJobrole().subscribe((jobroles) => {
+      this.jobroles = jobroles;
     });
     this.route.queryParams.subscribe(ss => {
       this.query = ss;

@@ -10,6 +10,7 @@ import {Prices} from '../stylist/stylist.component';
 import {Skills} from '../stylist-set/stylist-set.component';
 import {Dates } from '../stylist/stylist.component';
 import { Locations } from '../stylist-set/stylist-set.component';
+import { Jobroles } from '../stylist-set/stylist-set.component';
 
 @Injectable()
 export class UserService {
@@ -45,5 +46,9 @@ export class UserService {
 
   getLocation(): Observable<Locations[]> {
     return this.http.get<Locations[]>('http://localhost/demo/public/trn_prefferred_location');
+  }
+
+  getJobrole(): Observable<Jobroles[]> {
+    return this.http.get<Jobroles[]>('http://localhost/demo/public/trn_job_role');
   }
 }

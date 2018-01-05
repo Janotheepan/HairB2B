@@ -113,6 +113,14 @@ input[type="submit"]{
   padding-left: 8px;
   font-size: 10px;
 }
+.jrbtn {
+  width: auto;
+  height: auto;
+  border-radius: 15px 0 15px 0;
+  padding-left: 8px;
+  padding-right: 8px;
+  background-color: #4cae4c;
+}
 .formalign {
   text-align: center;
 }

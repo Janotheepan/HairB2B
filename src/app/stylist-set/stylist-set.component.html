@@ -10,6 +10,7 @@
         <h4>{{name.first_name}}&nbsp;&nbsp;
         {{name.last_name}}</h4>
         {{name.description}}<br>
+        <a *ngFor="let jobrole of jobroles"><a *ngIf="name.job_role_id == jobrole.id"><button class="jrbtn">{{jobrole.type}}</button>&nbsp;&nbsp;</a></a><br>
         Stars :- {{name.rating}} *<br>
         Skills :- <a *ngFor="let skill of skills"><a *ngIf="name.id == skill.stylist_id"><button class="skillbtn">{{skill.Skill}}</button>&nbsp;&nbsp;</a></a><br>
         Preferred Location :- <a *ngFor="let location of locations"><a *ngIf="name.id == location.stylist_id"><button class="skillbtn1">{{location.location}}</button>&nbsp;&nbsp;</a></a><br>

@@ -59,6 +59,7 @@
 
               <div class="row">
                 <a>
+                  <a *ngFor="let jobrole of jobroles"><a *ngIf="stylist.job_role_id == jobrole.id"><button class="jrbtn">{{jobrole.type}}</button>&nbsp;&nbsp;</a></a><br>
                   Skills : <a *ngFor="let skill of skills"><a *ngIf="stylist.id == skill.stylist_id"><button class="skillbtn">{{skill.Skill}}</button>&nbsp;&nbsp;</a></a><br>
                   Preferred Location :- <a *ngFor="let location of locations"><a *ngIf="stylist.id == location.stylist_id"><button class="skillbtn1">{{location.location}}</button>&nbsp;&nbsp;</a></a><br>
                   <br><p>{{stylist.description}}</p>
