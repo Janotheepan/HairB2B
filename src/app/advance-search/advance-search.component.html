@@ -2,7 +2,10 @@
     <form class="a-search">
       <h4>Search By,</h4>
       <p>Name</p>
-      <input type="text" name="name" placeholder="Name">
+      <input type="text" list="suggestname" name="name" placeholder="Name" [(ngModel)]="asn">
+      <datalist id="suggestname">
+        <option *ngFor="let name of names" [value]="name.first_name+' '+name.last_name"></option>
+      </datalist>
       <p>Skill</p>
       <input type="text" list="skillss" name="skill" placeholder="Preferred Skill">
       <datalist id="skillss">
@@ -13,11 +16,14 @@
         <option value="Shaving"></option>
       </datalist>
       <p>Start Date</p>
-      <input type="date" name="date">
+      <input type="date" name="date" disabled>
       <p>price</p>
-      <input type="text" name="price" placeholder="Accepted Price">
+      <input type="text" name="price" placeholder="Accepted Price" [(ngModel)]="asp">
       <p>Location</p>
-      <input type="text" name="location" placeholder="Preferred Location">
+      <input type="text" list="suggestlocation" name="location" placeholder="Preferred Location">
+      <datalist id="suggestlocation">
+        <option *ngFor="let location of locations" [value]="location.location"></option>
+      </datalist>
       <p>Job Type</p>
       <select name="job_type">
         <option value="" selected disabled>I Need the,</option>
@@ -25,5 +31,7 @@
         <option name="hair_stylist">Hair Stylist</option>
         <option name="assistant">Assistant</option>
       </select>
+      <br><p></p>
+      <button class="searchbtn1" type="submit" name="search" value="Go For Filter" routerLink="../complaints" [queryParams]="{skl: 'ffff', ggk: 'tttt'}">Go for Filter</button>
     </form>
   </div>

@@ -20,6 +20,7 @@ import { HttpModule} from '@angular/http';
 import {UserService} from './services/user.service';
 import { FilterredStylistSetComponent } from './filterred-stylist-set/filterred-stylist-set.component';
 import { SkillResultComponent } from './skill-result/skill-result.component';
+import { AsResultComponent } from './as-result/as-result.component';
 
 
 const routes: Routes = [
@@ -52,6 +53,9 @@ const routes: Routes = [
   },
   {
     path : 'skill_result' , component : SkillResultComponent
+  },
+  {
+    path : 'as_result' , component : AsResultComponent
   }
 ];
 
@@ -67,7 +71,8 @@ const routes: Routes = [
     StylistSetComponent,
     SignupComponent,
     FilterredStylistSetComponent,
-    SkillResultComponent
+    SkillResultComponent,
+    AsResultComponent
   ],
   imports: [
     BrowserModule,
