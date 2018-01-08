@@ -19,6 +19,7 @@ import { HttpModule} from '@angular/http';
 
 import {UserService} from './services/user.service';
 import { FilterredStylistSetComponent } from './filterred-stylist-set/filterred-stylist-set.component';
+import { SkillResultComponent } from './skill-result/skill-result.component';
 
 
 const routes: Routes = [
@@ -48,6 +49,9 @@ const routes: Routes = [
   },
   {
     path : 'filterred_stylist_set' , component : FilterredStylistSetComponent
+  },
+  {
+    path : 'skill_result' , component : SkillResultComponent
   }
 ];
 
@@ -62,7 +66,8 @@ const routes: Routes = [
     AdvanceSearchComponent,
     StylistSetComponent,
     SignupComponent,
-    FilterredStylistSetComponent
+    FilterredStylistSetComponent,
+    SkillResultComponent
   ],
   imports: [
     BrowserModule,

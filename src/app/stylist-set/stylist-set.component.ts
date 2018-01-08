@@ -15,7 +15,8 @@ export class StylistSetComponent implements OnInit {
   locations: Locations[];
   jobroles: Jobroles[];
   rel: '';
-  constructor(private userService: UserService) { }
+  chk: any;
+  constructor(private route: ActivatedRoute, private userService: UserService) { }
 
   ngOnInit() {
     this.userService.getNames().subscribe((names) => {
@@ -32,6 +33,9 @@ export class StylistSetComponent implements OnInit {
     });
     this.userService.getJobrole().subscribe((jobroles) => {
       this.jobroles = jobroles;
+    });
+    this.route.queryParams.subscribe(skll => {
+      this.chk = skll;
     });
   }
 

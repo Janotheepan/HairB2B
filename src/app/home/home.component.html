@@ -9,7 +9,7 @@
               <h2>You Can Hire An Educator, An Assistant Or A HairStylist <span class="typing"></span> </h2><br>
               <p>To complete your Hair Styling Needs Perfectly...</p><br><br>
                <h4>
-                 <input type="radio" name="searchtype" value="Name" [(ngModel)]="radiobtsearch">  Search By Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <input type="radio" name="searchtype" value="Name" checked [(ngModel)]="radiobtsearch">  Search By Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                  <input type="radio" name="searchtype" value="Skill" [(ngModel)]="radiobtsearch">  Search By Skill
                </h4>
                <br>
@@ -20,10 +20,13 @@
                      <option *ngFor="let name of names" [value]="name.first_name+' '+name.last_name"></option>
                    </datalist>
                  </h2><br>
+                 <h4>
+                   <button class="searchbtn" type="submit" name="Search" value="Search" routerLink="../stylist" [queryParams]="{nm: jj}">Search</button>
+                 </h4>
                </div>
                <div *ngIf="(radiobtsearch == 'Skill') ">
                  <h2>
-                   <input type="text" list="suggestskill" placeholder="Search the Stylist by {{radiobtsearch}}..." [(ngModel)]="jj">
+                   <input type="text" list="suggestskill" placeholder="Search the Stylist by {{radiobtsearch}}..." [(ngModel)]="ll">
                    <datalist id="suggestskill">
                      <option value="Barber"></option>
                      <option value="Dry Cutting"></option>
@@ -32,11 +35,12 @@
                      <option value="Shaving"></option>
                    </datalist>
                  </h2><br>
+                 <h4>
+                   <button class="searchbtn" type="submit" name="Search" value="Search" routerLink="../skill_result" [queryParams]="{skl: ll}">Search</button>
+                 </h4>
                </div>
 
-               <h4>
-                 <button class="searchbtn" type="submit" name="Search" value="Search" routerLink="../stylist" [queryParams]="{nm: jj}">Search</button>
-               </h4>
+
 
             </div>
           </div>
