@@ -29,6 +29,7 @@ export class StylistComponent implements OnInit {
   rel: '';
   query: any;
   nam: any;
+  asnm: any;
    public date = moment();
    public dateForm: FormGroup;
    public daysArr;
@@ -71,6 +72,9 @@ export class StylistComponent implements OnInit {
     this.route.queryParams.subscribe(nm => {
       this.nam = nm;
        console.log(this.nam);
+    });
+    this.route.queryParams.subscribe(name => {
+      this.asnm = name;
     });
   }
   public todayCheck(day) {

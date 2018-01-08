@@ -21,7 +21,7 @@ import {UserService} from './services/user.service';
 import { FilterredStylistSetComponent } from './filterred-stylist-set/filterred-stylist-set.component';
 import { SkillResultComponent } from './skill-result/skill-result.component';
 import { AsResultComponent } from './as-result/as-result.component';
-
+import { PriceResultComponent } from './price-result/price-result.component';
 
 const routes: Routes = [
   {
@@ -56,6 +56,9 @@ const routes: Routes = [
   },
   {
     path : 'as_result' , component : AsResultComponent
+  },
+  {
+    path : 'price_result' , component : PriceResultComponent
   }
 ];
 
@@ -72,7 +75,8 @@ const routes: Routes = [
     SignupComponent,
     FilterredStylistSetComponent,
     SkillResultComponent,
-    AsResultComponent
+    AsResultComponent,
+    PriceResultComponent,
   ],
   imports: [
     BrowserModule,

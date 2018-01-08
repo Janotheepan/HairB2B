@@ -1,13 +1,23 @@
   <div id="advance-serch">
     <form class="a-search">
       <h4>Search By,</h4>
+
+
       <p>Name</p>
-      <input type="text" list="suggestname" name="name" placeholder="Name" [(ngModel)]="asn">
+      <input type="text" list="suggestname" name="name" placeholder="Name" [(ngModel)]="asn">&nbsp;
+      <button class="arrow" type="submit" name="search" routerLink="../stylist" [queryParams]="{name: asn}">
+        >>
+      </button>
       <datalist id="suggestname">
         <option *ngFor="let name of names" [value]="name.first_name+' '+name.last_name"></option>
       </datalist>
+
+
       <p>Skill</p>
-      <input type="text" list="skillss" name="skill" placeholder="Preferred Skill">
+      <input type="text" list="skillss" name="skill" placeholder="Preferred Skill" [(ngModel)]="ass">&nbsp;
+      <button class="arrow" type="submit" name="search" routerLink="../skill_result" [queryParams]="{assk: ass}">
+        >>
+      </button>
       <datalist id="skillss">
         <option value="Barber"></option>
         <option value="Dry Cutting"></option>
@@ -15,23 +25,46 @@
         <option value="Makeup"></option>
         <option value="Shaving"></option>
       </datalist>
+
+
       <p>Start Date</p>
-      <input type="date" name="date" disabled>
+      <input type="date" name="date" disabled>&nbsp;
+      <button class="arrow">
+        >>
+      </button>
+
+
       <p>price</p>
-      <input type="text" name="price" placeholder="Accepted Price" [(ngModel)]="asp">
+      <input type="text" name="price" placeholder="Accepted Price" [(ngModel)]="asp">&nbsp;
+      <button class="arrow" type="submit" name="search" routerLink="../price_result" [queryParams]="{aspc: asp}">
+        >>
+      </button>
+
+
       <p>Location</p>
-      <input type="text" list="suggestlocation" name="location" placeholder="Preferred Location">
+      <input type="text" list="suggestlocation" name="location" placeholder="Preferred Location" [(ngModel)]="asl">&nbsp;
+      <button class="arrow">
+        >>
+      </button>
       <datalist id="suggestlocation">
         <option *ngFor="let location of locations" [value]="location.location"></option>
       </datalist>
+
+
       <p>Job Type</p>
-      <select name="job_type">
+      <select name="job_type" [(ngModel)]="asj">
         <option value="" selected disabled>I Need the,</option>
         <option name="educator">Educator</option>
         <option name="hair_stylist">Hair Stylist</option>
         <option name="assistant">Assistant</option>
-      </select>
+      </select>&nbsp;
+      <button class="arrow">
+        >>
+      </button>
       <br><p></p>
-      <button class="searchbtn1" type="submit" name="search" value="Go For Filter" routerLink="../complaints" [queryParams]="{skl: 'ffff', ggk: 'tttt'}">Go for Filter</button>
+
+
+
+      <button class="searchbtn1" type="submit" name="search" value="Go For Filter" routerLink="../complaints" [queryParams]="{skl: 'ffff', ggk: 'tttt'}">Go for Full Filter</button>
     </form>
   </div>

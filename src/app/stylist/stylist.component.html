@@ -49,7 +49,7 @@
           <div class="col-sm-4">
             <br>
           <div *ngFor="let stylist of stylists">
-          <div *ngIf="stylist.id == this.query.ss || stylist.first_name+' '+stylist.last_name == this.nam.nm">
+          <div *ngIf="stylist.id == this.query.ss || stylist.first_name+' '+stylist.last_name == this.nam.nm || stylist.first_name+' '+stylist.last_name == this.asnm.name">
               <div class="row">
                 <a><h2 class="heading">{{stylist.first_name}} {{stylist.last_name}}</h2>
                   <img src="{{stylist.profile_pic_path}}" class="profile_picture"><br><p></p>
@@ -78,27 +78,10 @@
             <div class="bookform container">
 
                 <form [formGroup] = 'dateForm' class="formalign">
-                  <input type="text" formControlName="dateFrom" name="dateFrom" placeholder="DateFrom">
-                  <input type="text" formControlName="dateTo" name="dateTo" placeholder="DateTo">
+                  <!--<input type="text" formControlName="dateFrom" name="dateFrom" placeholder="DateFrom">-->
+                  <input type="text" formControlName="dateTo" name="dateTo" placeholder="Date Selected">
                   <input type="submit" name="submit" value="Book Now">
                 </form>
-
-              <!--<div class="row">-->
-                <!--<div class="col-sm-9">-->
-                  <!--<br>-->
-                  <!--<input type="text" name="startdate" placeholder="Start Date"><br>-->
-                  <!--<div class="height-5px"></div>-->
-                  <!--<input type="text" name="enddate" placeholder="End Date"><br>-->
-                  <!--<div class="height-5px"></div>-->
-                  <!--<input type="radio" name="time" value="1">Morning &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-                  <!--<input type="radio" name="time" value="2">Evening-->
-                <!--</div>-->
-
-                <!--<div class="col-sm-3">-->
-                  <!--<br><br>-->
-                  <!--<input type="submit" name="submit" value="Book Now">-->
-                <!--</div>-->
-              <!--</div>-->
             </div>
           </div>
         </div>
