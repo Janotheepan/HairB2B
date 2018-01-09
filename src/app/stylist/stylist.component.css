@@ -22,17 +22,21 @@
   text-align: center;
   padding-top: 15px;
 }
+.calendardays{
+  width: 60px;
+  height: 90px;
+  text-align: center;
+  font-weight: bolder;
+}
 #leave{
   color: red;
 }
 .calendar-day{
-  width: 60px;
-  height: 60px;
-  background-color: #669999;
-  border: 3px solid #c2c2c2;
+  width: 45px;
+  height: 25px;
+  background-color: white;
   text-align: center;
-  padding-top: 15px;
-  font-weight: bolder;
+  opacity: 0.8;
 }
 div .flex-container{
   text-align: center;

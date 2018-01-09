@@ -25,6 +25,7 @@ import { PriceResultComponent } from './price-result/price-result.component';
 import { PriceResultEveComponent } from './price-result-eve/price-result-eve.component';
 import { LocationResultComponent } from './location-result/location-result.component';
 import { JobroleResultComponent } from './jobrole-result/jobrole-result.component';
+import { BookingComponent } from './booking/booking.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,9 @@ const routes: Routes = [
   },
   {
     path : 'jobrole_result' , component : JobroleResultComponent
+  },
+  {
+    path : 'booking' , component : BookingComponent
   }
 ];
 
@@ -92,6 +96,7 @@ const routes: Routes = [
     PriceResultEveComponent,
     LocationResultComponent,
     JobroleResultComponent,
+    BookingComponent,
   ],
   imports: [
     BrowserModule,

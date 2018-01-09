@@ -13,6 +13,7 @@ import {
   FormGroup,
   Validators
 } from '@angular/forms';
+import index from '@angular/cli/lib/cli';
 
 @Component({
   selector: 'app-stylist',
@@ -30,13 +31,27 @@ export class StylistComponent implements OnInit {
   query: any;
   nam: any;
   asnm: any;
+  thisDate;
+  selectedDate = [];
+  dayFormatted;
+  dateTo;
+  costTotal;
+
    public date = moment();
    public dateForm: FormGroup;
    public daysArr;
+   public isReserved;
+   public isReservedw;
 
   constructor(private route: ActivatedRoute, private userService: UserService, private fb: FormBuilder ) {
     this.initDateForm();
   }
+
+  // onPickDate(val) {
+  //     this.thisDate = val;
+  //     console.log(this.thisDate);
+  //     this.selectedDate.push(this.thisDate);
+  // }
 
   public initDateForm() {
     return this.dateForm = this.fb.group( {
@@ -108,33 +123,54 @@ export class StylistComponent implements OnInit {
     return (day < check);
   }
 
-  public isSelected(day) {
-    if (!day) {
-      return false;
-    }
-    const dateFrom = moment(this.dateForm.value.dateFrom, 'MM/DD/YYYY');
-    const dateTo = moment(this.dateForm.value.dateTo, 'MM/DD/YYYY');
-    if (this.dateForm.valid) {
-      return dateFrom.isSameOrBefore(day) && dateTo.isSameOrAfter(day);
-    }
-    if (this.dateForm.get('dateFrom').valid) {
-      return dateFrom.isSame(day);
-    }
-  }
-
-  public selectedDate(day) {
-    const dayFormatted = day.format('MM/DD/YYYY');
-    console.log(day);
+  public selectedDatem(day) {
+    this.dayFormatted = day.format('MM/DD/YYYY');
+    // console.log(day);
     if (this.dateForm.valid) {
       this.dateForm.setValue({dateFrom: null, dateTo: null});
       return;
     }
     if (this.dateForm.get('dateFrom').value) {
-      this.dateForm.get('dateFrom').patchValue(dayFormatted);
+      this.dateForm.get('dateFrom').patchValue(this.dayFormatted);
     } else {
-      this.dateForm.get('dateTo').patchValue(dayFormatted);
+      this.dateForm.get('dateTo').patchValue(this.dayFormatted + ' Morning');
     }
+    console.log(this.dayFormatted);
+    this.selectedDate.push('You have choosen ' + this.dayFormatted + ' - Morning session');
+    // this.costTotal.push('100');
   }
+
+  public selectedDatee(day) {
+    this.dayFormatted = day.format('MM/DD/YYYY');
+    // console.log(day);
+    if (this.dateForm.valid) {
+      this.dateForm.setValue({dateFrom: null, dateTo: null});
+      return;
+    }
+    if (this.dateForm.get('dateFrom').value) {
+      this.dateForm.get('dateFrom').patchValue(this.dayFormatted);
+    } else {
+      this.dateForm.get('dateTo').patchValue(this.dayFormatted + ' Evening');
+    }
+    // this.selectedDate.splice(index(1));
+     this.selectedDate.push('You have choosen ' + this.dayFormatted + ' - Evening session');
+    // this.costTotal.push('200');
+  }
+  public reservem() {
+    if (!this.dateForm.valid) {
+      return;
+    }
+    const dateTo = this.dateForm.value.dateTo;
+    this.isReserved = 'You are Ready to Book on ' + (dateTo) + ' Morning';
+  }
+  public reservee() {
+    if (!this.dateForm.valid) {
+      return;
+    }
+    const dateTo = this.dateForm.value.dateTo;
+    this.isReservedw = 'You are Ready to Book on ' + (dateTo) + ' Evening';
+  }
+
   public checkBusy(day) {  }
 }
 
