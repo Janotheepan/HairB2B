@@ -23,6 +23,8 @@ import { SkillResultComponent } from './skill-result/skill-result.component';
 import { AsResultComponent } from './as-result/as-result.component';
 import { PriceResultComponent } from './price-result/price-result.component';
 import { PriceResultEveComponent } from './price-result-eve/price-result-eve.component';
+import { LocationResultComponent } from './location-result/location-result.component';
+import { JobroleResultComponent } from './jobrole-result/jobrole-result.component';
 
 const routes: Routes = [
   {
@@ -63,6 +65,12 @@ const routes: Routes = [
   },
   {
     path : 'price_result_eve' , component : PriceResultEveComponent
+  },
+  {
+    path : 'location_result' , component : LocationResultComponent
+  },
+  {
+    path : 'jobrole_result' , component : JobroleResultComponent
   }
 ];
 
@@ -82,6 +90,8 @@ const routes: Routes = [
     AsResultComponent,
     PriceResultComponent,
     PriceResultEveComponent,
+    LocationResultComponent,
+    JobroleResultComponent,
   ],
   imports: [
     BrowserModule,

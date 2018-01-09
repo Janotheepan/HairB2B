@@ -50,7 +50,7 @@
 
       <p>Location</p>
       <input type="text" list="suggestlocation" name="location" placeholder="Preferred Location" [(ngModel)]="asl">&nbsp;
-      <button class="arrow">
+      <button class="arrow" type="submit" name="search" routerLink="../location_result" [queryParams]="{aslc: asl}">
         >>
       </button>
       <datalist id="suggestlocation">
@@ -59,15 +59,13 @@
 
 
       <p>Job Type</p>
-      <select name="job_type" [(ngModel)]="asj">
-        <option value="" selected disabled>I Need the,</option>
-        <option name="educator">Educator</option>
-        <option name="hair_stylist">Hair Stylist</option>
-        <option name="assistant">Assistant</option>
-      </select>&nbsp;
-      <button class="arrow">
+      <input type="text" list="suggestjobrole" name="jobrole" placeholder="I Need The," [(ngModel)]="asj">&nbsp;
+      <button class="arrow" type="submit" name="search" routerLink="../jobrole_result" [queryParams]="{asjr: asj}">
         >>
       </button>
+      <datalist id="suggestjobrole">
+        <option *ngFor="let jobrole of jobroles" [value]="jobrole.type"></option>
+      </datalist>
       <br><p></p>
 
 
