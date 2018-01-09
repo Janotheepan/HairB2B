@@ -3,14 +3,14 @@
       <h4>Search By,</h4>
 
 
-      <p>Name</p>
-      <input type="text" list="suggestname" name="name" placeholder="Name" [(ngModel)]="asn">&nbsp;
-      <button class="arrow" type="submit" name="search" routerLink="../stylist" [queryParams]="{name: asn}">
-        >>
-      </button>
-      <datalist id="suggestname">
-        <option *ngFor="let name of names" [value]="name.first_name+' '+name.last_name"></option>
-      </datalist>
+      <!--<p>Name</p>-->
+      <!--<input type="text" list="suggestname" name="name" placeholder="Name" [(ngModel)]="asn">&nbsp;-->
+      <!--<button class="arrow" type="submit" name="search" routerLink="../stylist" [queryParams]="{name: asn}">-->
+        <!--&gt;>-->
+      <!--</button>-->
+      <!--<datalist id="suggestname">-->
+        <!--<option *ngFor="let name of names" [value]="name.first_name+' '+name.last_name"></option>-->
+      <!--</datalist>-->
 
 
       <p>Skill</p>
@@ -35,8 +35,15 @@
 
 
       <p>price</p>
-      <input type="text" name="price" placeholder="Accepted Price" [(ngModel)]="asp">&nbsp;
+      <input type="text" name="price" placeholder="Accepted Price for Morning" [(ngModel)]="asp">&nbsp;
       <button class="arrow" type="submit" name="search" routerLink="../price_result" [queryParams]="{aspc: asp}">
+        >>
+      </button>
+
+
+      <p>price</p>
+      <input type="text" name="price" placeholder="Accepted Price for Evening" [(ngModel)]="aspe">&nbsp;
+      <button class="arrow" type="submit" name="search" routerLink="../price_result_eve" [queryParams]="{aspce: aspe}">
         >>
       </button>
 

@@ -22,6 +22,7 @@ import { FilterredStylistSetComponent } from './filterred-stylist-set/filterred-
 import { SkillResultComponent } from './skill-result/skill-result.component';
 import { AsResultComponent } from './as-result/as-result.component';
 import { PriceResultComponent } from './price-result/price-result.component';
+import { PriceResultEveComponent } from './price-result-eve/price-result-eve.component';
 
 const routes: Routes = [
   {
@@ -59,6 +60,9 @@ const routes: Routes = [
   },
   {
     path : 'price_result' , component : PriceResultComponent
+  },
+  {
+    path : 'price_result_eve' , component : PriceResultEveComponent
   }
 ];
 
@@ -77,6 +81,7 @@ const routes: Routes = [
     SkillResultComponent,
     AsResultComponent,
     PriceResultComponent,
+    PriceResultEveComponent,
   ],
   imports: [
     BrowserModule,
