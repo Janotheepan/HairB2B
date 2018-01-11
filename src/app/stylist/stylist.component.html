@@ -41,8 +41,8 @@
                   <a class="flex-column" *ngFor = "let day of daysArr">
                       <button class="calendardays" [disabled]="possibleDay(day)" [ngClass] = "{'inactive':!day, 'today': todayCheck(day), 'busy': checkBusy(day)}">
                         {{day?.date()}}<br>
-                        <button class="calendar-day" [disabled]="possibleDay(day)" (click)="selectedDatem(day) ; reservem()" [ngClass]="{'inactive':!day}" >Mor</button><br>
-                        <button class="calendar-day" [disabled]="possibleDay(day)" (click)="selectedDatee(day); reservee()" [ngClass]="{'inactive':!day}">Eve</button>
+                        <button class="calendar-day" [disabled]="possibleDay(day)" (click)="selectedDatem(day) ; isSelected()" [ngClass]="{'inactive':!day, 'selected':isSelected()}" >Mor</button><br>
+                        <button class="calendar-day" [disabled]="possibleDay(day)" (click)="selectedDatee(day) ; isSelected()" [ngClass]="{'inactive':!day, 'selected':isSelected()}">Eve</button>
                       </button>
                   </a>
                </div>
@@ -83,12 +83,11 @@
           <div class="col-sm=8">
             <div class="bookform container">
 
+              <div *ngFor="let qwe of selectedDate">
+                {{qwe}}
+              </div>
+
                 <form [formGroup] = 'dateForm' class="formalign">
-                  <!--<input type="text" formControlName="dateFrom" name="dateFrom" placeholder="DateFrom">-->
-                  <!--<input type="text" formControlName="dateTo" name="dateTo" placeholder="Date Selected" [(ngModel)] = "pickDate" (ngModelChange) = "onPickDate(pickDate)"><br>-->
-                  <div *ngFor="let qwe of selectedDate">
-                    {{qwe}}
-                  </div>
                   <input type="submit" name="submit" value="Book Now">
                 </form>
             </div>

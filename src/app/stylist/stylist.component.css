@@ -5,26 +5,27 @@
   align-content: center;
 }
 #advance{
-  width: 100%;
+  width: 98%;
   height: auto;
   padding-left: 50px;
 }
 #calendar-container{
-  width: 500px;
+  width: 50%px;
   padding-left: 18px;
   padding-top: 25px;
 }
 .calendar-days{
-  width: 60px;
-  height: 60px;
+  width: 13%;
+  height: auto;
   background-color: #1b6d85;
   border: 3px solid #c2c2c2;
   text-align: center;
-  padding-top: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .calendardays{
-  width: 60px;
-  height: 90px;
+  width: 13%;
+  height: auto;
   text-align: center;
   font-weight: bolder;
 }
@@ -32,8 +33,8 @@
   color: red;
 }
 .calendar-day{
-  width: 45px;
-  height: 25px;
+  width: 100%;
+  height: auto;
   background-color: white;
   text-align: center;
   opacity: 0.8;
@@ -63,6 +64,8 @@ div .flex-container{
 }
 .today{
   background-color: #1b6d85;
+  font-weight: bolder;
+  color: black;
 }
 .bookform{
   width: 100%;
@@ -127,9 +130,11 @@ input[type="submit"]{
 }
 .formalign {
   text-align: center;
+  align-items: center;
 }
 .selected {
   background-color: #1bab58;
-  color: #1bab58;
-  opacity: 0.5;
+  }
+.busy {
+  background-color: #bd081c;
 }

@@ -11,6 +11,7 @@ import {Skills} from '../stylist-set/stylist-set.component';
 import {Dates } from '../stylist/stylist.component';
 import { Locations } from '../stylist-set/stylist-set.component';
 import { Jobroles } from '../stylist-set/stylist-set.component';
+import { Busy } from '../stylist/stylist.component';
 
 @Injectable()
 export class UserService {
@@ -50,5 +51,8 @@ export class UserService {
 
   getJobrole(): Observable<Jobroles[]> {
     return this.http.get<Jobroles[]>('http://localhost/demo/public/trn_job_role');
+  }
+  getBusy(): Observable<Busy[]> {
+    return this.http.get<Busy[]>('http://localhost/demo/public/trn_busy_dates');
   }
 }

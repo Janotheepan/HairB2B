@@ -27,16 +27,18 @@ export class StylistComponent implements OnInit {
   dates: Dates[];
   locations: Locations[];
   jobroles: Jobroles[];
+  busydays: Busy[];
   rel: '';
   query: any;
   nam: any;
   asnm: any;
   thisDate;
+  thisDatee;
+  count: boolean  = false;
   selectedDate = [];
   dayFormatted;
   dateTo;
   costTotal;
-
    public date = moment();
    public dateForm: FormGroup;
    public daysArr;
@@ -79,6 +81,9 @@ export class StylistComponent implements OnInit {
     });
     this.userService.getJobrole().subscribe((jobroles) => {
       this.jobroles = jobroles;
+    });
+    this.userService.getBusy().subscribe((busydays) => {
+      this.busydays = busydays;
     });
     this.route.queryParams.subscribe(ss => {
       this.query = ss;
@@ -124,54 +129,68 @@ export class StylistComponent implements OnInit {
   }
 
   public selectedDatem(day) {
-    this.dayFormatted = day.format('MM/DD/YYYY');
-    // console.log(day);
-    if (this.dateForm.valid) {
-      this.dateForm.setValue({dateFrom: null, dateTo: null});
-      return;
+    this.dayFormatted = day.format('DD/MM/YYYY');
+    if (this.dayFormatted) {
+      this.thisDate = 'You have chosen ' + this.dayFormatted + ' - Morning session';
+      for (let i = 0; i < this.selectedDate.length; i++) {
+        if (this.selectedDate[i] === this.thisDate) {
+          this.selectedDate.splice(i , 1);
+          return;
+        }
+      }
+      this.selectedDate.push('You have chosen ' + this.dayFormatted + ' - Morning session');
     }
-    if (this.dateForm.get('dateFrom').value) {
-      this.dateForm.get('dateFrom').patchValue(this.dayFormatted);
-    } else {
-      this.dateForm.get('dateTo').patchValue(this.dayFormatted + ' Morning');
-    }
-    console.log(this.dayFormatted);
-    this.selectedDate.push('You have choosen ' + this.dayFormatted + ' - Morning session');
     // this.costTotal.push('100');
   }
 
   public selectedDatee(day) {
-    this.dayFormatted = day.format('MM/DD/YYYY');
-    // console.log(day);
-    if (this.dateForm.valid) {
-      this.dateForm.setValue({dateFrom: null, dateTo: null});
-      return;
+    this.dayFormatted = day.format('DD/MM/YYYY');
+    if (this.dayFormatted) {
+      this.thisDate = 'You have chosen ' + this.dayFormatted + ' - Evening session';
+      for (let i = 0; i < this.selectedDate.length; i++) {
+        if (this.selectedDate[i] === this.thisDate) {
+          this.selectedDate.splice(i, 1);
+          return;
+        }
+      }
+      this.selectedDate.push('You have chosen ' + this.dayFormatted + ' - Evening session');
     }
-    if (this.dateForm.get('dateFrom').value) {
-      this.dateForm.get('dateFrom').patchValue(this.dayFormatted);
-    } else {
-      this.dateForm.get('dateTo').patchValue(this.dayFormatted + ' Evening');
-    }
-    // this.selectedDate.splice(index(1));
-     this.selectedDate.push('You have choosen ' + this.dayFormatted + ' - Evening session');
-    // this.costTotal.push('200');
-  }
-  public reservem() {
-    if (!this.dateForm.valid) {
-      return;
-    }
-    const dateTo = this.dateForm.value.dateTo;
-    this.isReserved = 'You are Ready to Book on ' + (dateTo) + ' Morning';
-  }
-  public reservee() {
-    if (!this.dateForm.valid) {
-      return;
-    }
-    const dateTo = this.dateForm.value.dateTo;
-    this.isReservedw = 'You are Ready to Book on ' + (dateTo) + ' Evening';
   }
 
-  public checkBusy(day) {  }
+  public isSelected() {
+    if (this.count) {
+      this.count = !this.count;
+      return false;
+    } else {
+      this.count = !this.count;
+      return true;
+    }
+    // if (!day) {
+    //   return false;
+    // }
+    // let dateFrom = moment(this.dateForm.value.dateFrom, 'DD/MM/YYYY');
+    // let dateTo = moment(this.dateForm.value.dateTo, 'DD/MM/YYYY');
+    // if (this.dateForm.valid) {
+    //   return dateFrom.isSameOrBefore(day) && dateTo.isSameOrAfter(day);
+    // }
+    // if (this.dateForm.get('dateFrom').valid) {
+    //    dateFrom.isSame(day);
+    // }return
+    // this.dayFormatted = day.format('DD/MM/YYYY');
+    // if (this.dayFormatted) {
+    //   this.thisDate = 'You have chosen ' + this.dayFormatted + ' - Morning session';
+    //   this.thisDatee = 'You have chosen ' + this.dayFormatted + ' - Evening session';
+    //   for (let i = 0; i < this.selectedDate.length; i++) {
+    //     if (this.selectedDate[i] === this.thisDate || this.selectedDate[i] === this.thisDatee) {
+    //       return true;
+    //     }
+    //   }
+    //   return false;
+    // }
+  }
+  public checkBusy(day) {
+
+  }
 }
 
 export interface Stylists {
@@ -194,4 +213,9 @@ export interface Dates {
   stylist_id: number;
   time_slot: string;
   date: string;
+}
+export interface Busy {
+  id: number;
+  stylist_id: number;
+  time_slot: string;
 }
